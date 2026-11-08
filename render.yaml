@@ -14,10 +14,8 @@ services:
       - key: CORS_ORIGINS
         value: "http://localhost:5173,https://*.vercel.app,https://*.onrender.com"
 
-  - type: web
+  - type: static
     name: jalsetu-frontend
-    env: static
-    plan: free
     buildCommand: "cd frontend && npm install && npm run build"
     staticPublishPath: "./frontend/dist"
     routes:
