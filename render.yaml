@@ -1,6 +1,4 @@
-
 services:
-  # Backend - FastAPI
   - type: web
     name: jalsetu-backend
     env: python
@@ -14,14 +12,4 @@ services:
       - key: PYTHONPATH
         value: .
       - key: CORS_ORIGINS
-        value: "http://localhost:5173,https://*.vercel.app,https://*.onrender.com"
-
-  # Frontend - React/Vite
-  - type: static_site
-    name: jalsetu-frontend
-    buildCommand: "cd frontend && npm install && npm run build"
-    staticPublishPath: "./frontend/dist"
-    routes:
-      - type: rewrite
-        source: "/*"
-        destination: "/index.html"
+        value: "http://localhost:5173,https://*.vercel.app,https://*.onrender.com,https://prernasutar42-bit.github.io"
