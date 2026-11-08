@@ -1,4 +1,6 @@
+
 services:
+  # Backend - FastAPI
   - type: web
     name: jalsetu-backend
     env: python
@@ -14,7 +16,8 @@ services:
       - key: CORS_ORIGINS
         value: "http://localhost:5173,https://*.vercel.app,https://*.onrender.com"
 
-  - type: static
+  # Frontend - React/Vite
+  - type: static_site
     name: jalsetu-frontend
     buildCommand: "cd frontend && npm install && npm run build"
     staticPublishPath: "./frontend/dist"
@@ -22,8 +25,3 @@ services:
       - type: rewrite
         source: "/*"
         destination: "/index.html"
-    envVars:
-      - key: VITE_BASE_PATH
-        value: "/"
-      - key: VITE_USE_MOCK
-        value: "false"
