@@ -26,5 +26,7 @@ services:
         source: "/*"
         destination: "/index.html"
     envVars:
+      - key: VITE_BASE_PATH
+        value: "/"
       - key: VITE_USE_MOCK
         value: "false"

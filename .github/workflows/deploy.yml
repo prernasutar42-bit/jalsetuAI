@@ -32,6 +32,8 @@ jobs:
         run: cd frontend && npm ci
 
       - name: Build frontend
+        env:
+          VITE_BASE_PATH: "/jalsetuAI/"
         run: |
           cd frontend
           npm run build
